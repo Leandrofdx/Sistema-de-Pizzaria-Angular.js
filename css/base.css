@@ -1,0 +1,457 @@
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select.form-control {
+	height: 50px;
+	margin: 0;
+	padding: 0 20px;
+	vertical-align: middle;
+	background: #f8f8f8;
+	border: 3px solid #ddd;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 50px;
+	color: #888;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+/*    -o-transition: all .3s;
+-moz-transition: all .3s;
+-webkit-transition: all .3s;
+-ms-transition: all .3s;
+transition: all .3s;*/
+}
+
+input[type="file"] {
+	height: 35px;
+	margin: 0;
+	padding: 0 20px;
+	vertical-align: bottom;
+	background: #f8f8f8;
+	border: 3px solid #ddd;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 30px;
+	color: #888;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+/*    -o-transition: all .3s;
+-moz-transition: all .3s;
+-webkit-transition: all .3s;
+-ms-transition: all .3s;
+transition: all .3s;*/
+}
+
+input[type=radio] {
+	margin-top: 8px !important;
+}
+
+textarea,
+textarea.form-control {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 30px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+textarea.form-control:focus {
+	outline: 0;
+	background: #fff;
+	border: 3px solid #ccc;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+input[type="text"]:-moz-placeholder,
+input[type="password"]:-moz-placeholder,
+textarea:-moz-placeholder,
+textarea.form-control:-moz-placeholder {
+	color: #888;
+}
+
+input[type="text"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+textarea.form-control:-ms-input-placeholder {
+	color: #888;
+}
+
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+textarea.form-control::-webkit-input-placeholder {
+	color: #888;
+}
+
+button.btn {
+	height: 50px;
+	margin: 10px;
+	padding: 0 20px;
+	vertical-align: middle;
+	background: #970c0c;
+	border: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 50px;
+	color: #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	text-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+button.btn:hover {
+	opacity: 0.6;
+	color: #fff;
+}
+
+button.btn:active {
+	outline: 0;
+	opacity: 0.6;
+	color: #fff;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+button.btn:focus {
+	outline: 0;
+	opacity: 0.6;
+	background: #ccc;
+	;
+	color: #fff;
+}
+
+button.btn:active:focus,
+button.btn.active:focus {
+	outline: 0;
+	opacity: 0.6;
+	background: #ccc;
+	;
+	color: #fff;
+}
+
+
+/*style.css**/
+html { 
+	background: url('../images/bk/pizza.jpg') 100% 100% no-repeat!important;
+	padding-bottom: 50%;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #888;
+	line-height: 30px;
+	text-align: center;
+	background: transparent!important;
+}
+
+main {
+	padding-top: 20px;
+}
+
+strong {
+	font-weight: 500;
+}
+
+a,
+a:hover,
+a:focus {
+	color: #ccc;
+	;
+	text-decoration: none;
+/*    -o-transition: all .3s;
+-moz-transition: all .3s;
+-webkit-transition: all .3s;
+-ms-transition: all .3s;
+transition: all .3s;*/
+}
+
+h1,
+h2 {
+	margin-top: 10px;
+	font-size: 38px;
+	font-weight: 100;
+	color: #555;
+	line-height: 50px;
+}
+
+h3 {
+	font-size: 22px;
+	font-weight: 300;
+	color: #555;
+	line-height: 30px;
+	font-family: 'Lobster', cursive;
+}
+
+.form-top-left h3 {
+	font-size: 40px;
+	/*font-weight: bold;*/
+}
+
+::-moz-selection {
+	background: #ccc;
+	;
+	color: #fff;
+	text-shadow: none;
+}
+
+::selection {
+	background: #ccc;
+	;
+	color: #fff;
+	text-shadow: none;
+}
+
+.btn-link-1 {
+	display: inline-block;
+	height: 50px;
+	margin: 0 5px;
+	padding: 16px 20px 0 20px;
+	background: #ccc;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 16px;
+	color: #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.btn-link-1:hover,
+.btn-link-1:focus,
+.btn-link-1:active {
+	outline: 0;
+	opacity: 0.6;
+	color: #fff;
+}
+
+.btn-link-2 {
+	display: inline-block;
+	height: 50px;
+	margin: 0 5px;
+	padding: 15px 20px 0 20px;
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid #fff;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 16px;
+	color: #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.btn-link-2:hover,
+.btn-link-2:focus,
+.btn-link-2:active,
+.btn-link-2:active:focus {
+	outline: 0;
+	opacity: 0.6;
+	background: rgba(0, 0, 0, 0.3);
+	color: #fff;
+}
+
+
+/***** Top content *****/
+
+.form-box {
+	font-family: 'Roboto', sans-serif;
+}
+
+.form-top {
+	overflow: hidden;
+	padding-left: 20px;
+	background: #970c0c url('../images/animation/slice.png') 15px center no-repeat;
+	background-size: 60px;
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+	text-align: left;
+	color: #fff;
+	/* transition: opacity .3s ease-in-out;*/
+}
+
+.form-top h3 {
+	color: #fff;
+	margin: 20px;
+	float: left;
+	padding-left: 50px;
+
+}
+.form-top img {
+	float: left;
+	margin-top: 10px;
+}
+.form-bottom {
+	padding: 25px 25px 30px 25px;
+	background: #eee;
+	-moz-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+	text-align: left;
+	/*transition: all .4s ease-in-out;*/
+}
+
+.form-bottom:hover {
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+form .form-bottom button.btn {
+	min-width: 105px;
+}
+
+form .form-bottom .input-error {
+	border-color: #d03e3e;
+	color: #d03e3e;
+}
+
+form.registration-form fieldset {
+	display: none;
+}
+
+
+/*--*/
+
+.listdemoListControls md-divider {
+	margin-top: 0;
+	margin-bottom: 0; }
+
+	.listdemoListControls md-list {
+		padding-top: 0; }
+
+		.listdemoListControls md-list-item > p,
+		.listdemoListControls md-list-item > .md-list-item-inner > p,
+		.listdemoListControls md-list-item .md-list-item-inner > p,
+		.listdemoListControls md-list-item .md-list-item-inner > .md-list-item-inner > p {
+			-webkit-user-select: none;
+			/* Chrome all / Safari all */
+			-moz-user-select: none;
+			/* Firefox all */
+			-ms-user-select: none;
+			/* IE 10+ */
+			user-select: none;
+		/* Likely future */ }
+
+		.list-itens {
+			height: 500px;
+			overflow-y: scroll;
+		}
+
+		.item, .demand, li.list-group-item.ng-scope,
+		label.radio-inline.ng-binding  {
+			cursor: pointer;
+			font-family: 'Lobster', cursive;
+			font-weight: bold;
+			letter-spacing:3px;
+			color:#333;
+			font-size: 18px;
+
+		}
+		.list-group-item > .badge {
+			width: 60px;
+			background: #f7941d;
+			padding: 10px 4px;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		.demand {
+			height: 370px;
+			overflow-y: scroll;
+			font-weight: bold;
+		}
+		.navigation,
+		.pay {
+			margin: 0;
+			padding: 0;
+		}
+		.navigation {
+			width: 100%;
+		}
+		.box-data {
+			background: 
+		}
+
+		#InputAmount {
+			background: #fff;
+			font-size: 20px;
+		}
+		.input-group,
+		.input-group-addon:first-child,
+		.input-group-addon:last-child,
+		input.form-control.value {
+			background: #fff;
+			font-weight: bold;
+			color: #000;
+		}
+		.list-group {
+			margin-top: 0;
+		}
+		#commands {
+			min-height: 275px;
+		}
+
+		#commands ul li span {
+			margin-right: 10px;
+		}
+		span.info,
+		.badge.ng-binding {
+			margin: 0;
+			background: #970c0c;
+			color: #fff;
+			padding: 5px;
+			border-radius: 5px;
+
+		}
+		.finish-head {
+			margin: 5px 0;
+		}
+
+		@media all and (max-width: 480px) { 
+
+			.item, .demand, li.list-group-item.ng-scope, label.radio-inline.ng-binding {
+				letter-spacing: 0;
+				font-size: 14px;
+			}
+			span.info, .badge.ng-binding {
+				align-self: center;
+			}
+			.form-top-left h3 {
+				font-size: 20px;
+			}
+			span.text {
+				font-size: 13px;
+			}
+
+			.col-md-12.form-box {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			fieldset, div#commands {
+				padding: 0
+			}
+			.list-itens,
+			.demand {
+				height: 200px;
+			}
+		}

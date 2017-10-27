@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="images/favicon/pizza.png"/>
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<title>Pizzaria</title>
+	
+</head>
+<body ng-app="myApp">
+	<main class="container">
+		<div class="row">
+			<div class="col-md-12 form-box">
+				<form role="form" class="registration-form" action="javascript:void(0);">
+
+					<fieldset>
+					  <div class="form-top">
+						<div class="form-top-left">
+						  <h3>Escolha seus Ingredientes</h3>
+						</div>
+					  </div>
+					  <div class="form-bottom" ng-controller="ingredientes">
+						<div class="row">
+						<ul class="list-group list-itens col-xs-12 col-sm-6">
+							<li class="list-group-item" ng-repeat="item in ingredientes | orderBy : 'ingrediente'" onclick="montaPizzaController.selectIngredient(event)">
+							  <input type="checkbox" id="{{item.id}}-ingrediente" value="{{item.preco}}" data-x="Ingrediente - {{item.ingrediente}}">
+							  <label for='{{item.id}}-ingrediente' class="item">{{item.ingrediente}}</label>
+							  <span class="badge">R$ {{item.preco}}</span>
+							</li>
+						  </ul>
+						  <ul class="list-group demand col-xs-12 col-sm-6"> </ul>
+			
+						<div class="input-group">
+						  <span class="input-group-addon">R$</span>
+						  <input type="text" class="form-control value" value="" disabled  aria-label="">
+						  <div class="input-group-addon">.00</div>
+						</div>
+						<button type="button" class="btn btn-next">Próximo</button>
+					  </div>
+					</fieldset>
+
+					<fieldset>				
+					  <div class="form-top">
+						<div class="form-top-left">
+						  <h3>Escolha a sua Borda</h3>
+						</div>
+					  </div>
+					  <div class="form-bottom" ng-controller="bordas">
+						<div class="row">
+
+						<ul class="list-group list-itens col-xs-12 col-sm-6">
+							<li class="list-group-item" ng-repeat="item in bordas | orderBy : 'valor'" onclick="montaPizzaController.selectIngredient(event)">
+								<input type="radio" name="borda" id="borda-{{item.borda}}" data-x="Borda - {{item.borda}}" value="{{item.valor}}">
+								<label class="radio-inline item" for="borda-{{item.borda}}">{{item.borda}}</label>
+								<span class="badge">R$ {{item.valor}}</span>
+							</li>
+						  </ul>
+						  <ul class="list-group list-itens demand col-xs-12 col-sm-6"> </ul>
+							<div class="input-group">
+							  <span class="input-group-addon">R$</span>
+							  <input type="text" class="form-control value" value="" disabled  aria-label="">
+							  <div class="input-group-addon">.00</div>
+							</div>
+							<button type="button" class="btn btn-previous">Voltar</button>
+							<button type="button" class="btn btn-next">Próximo</button>
+						</div>
+					</fieldset>
+
+					<fieldset>
+					  <div class="form-top">
+						<div class="form-top-left">
+						  <h3>Escolha o Tamanho</h3>
+						</div>
+					  </div>
+					  <div class="form-bottom" ng-controller="tamanhos">
+						<div class="row">
+						<ul class="list-group list-itens col-xs-12 col-sm-6">
+							<li class="list-group-item" ng-repeat="item in tamanhos | orderBy : 'id'" onclick="montaPizzaController.selectIngredient(event)">
+								<input type="radio" name="tamanho" id="tamanho-{{item.tamanho}}" data-x="Tamanho - {{item.tamanho}}" value="{{item.peso}}"> 
+								<label class="radio-inline" for="tamanho-{{item.tamanho}}"> {{item.tamanho}}</label>
+								<span class="badge">x {{item.peso}}</span>
+							</li>
+						  </ul>
+						  <ul class="list-group demand col-xs-12 col-sm-6"> </ul>
+							<div class="input-group">
+							  <span class="input-group-addon">R$</span>
+							  <input type="text" class="form-control value" value="" disabled  aria-label="">
+							  <div class="input-group-addon">.00</div>
+							</div>
+							<button type="button" class="btn btn-previous">Voltar</button>
+							<button type="button" class="btn btn-next" onclick="montaPizzaController.finish()">Finalizar</button>
+						</div>
+					</fieldset>
+
+					<fieldset>
+					  <div class="form-top">
+						<div class="form-top-left">
+						  <h3>Finalizar Pedido</h3>
+						</div>
+					  </div>
+					  <div class="form-bottom" ng-controller="tamanhos">
+						<div class="row">
+							<div class="pizza">
+								<ul class="list-group demand col-xs-12 col-sm-6"> </ul>
+							</div>
+							<div class="col-xs-12 col-sm-6 " id='commands'>
+								<h3 class='finish-head'>Informações</h3>
+								<ul class="list-group">
+									<li class="list-group-item">
+										<span class="glyphicon glyphicon-pushpin"></span>
+										<span class="text">Aviso - Cliente com tempo de espera acima de 40min tem direito a um desconto de 10%</span>
+									</li>
+									
+									<li class="list-group-item">
+									  	<span class="glyphicon glyphicon-time"></span>
+									  	 <span class="text">Tempo de Espera</span> <span class='wait info badge ng-binding'></span> 
+										</li>
+									<li class="list-group-item">
+									  	<span class="glyphicon glyphicon-tag"></span>
+									  	<span class="text">Valor do desconto</span> <span class="info desc badge ng-binding">00,00</span>
+									</li>
+									<li class="list-group-item">
+									  	<span class="glyphicon glyphicon-tag"></span>
+									  	<span class="text">Valor com desconto </span> <span class="info total badge ng-binding">00,00</span>
+									</li>
+									<li class="list-group-item"><span class="glyphicon glyphicon-pushpin"></span>
+										Taxa de entrega <span class="info badge ng-binding">R$ 10,00</span>	
+									</li>
+								</ul>
+							 </div>
+							<div class="time"></div>
+						<div class="input-group">
+						  	<span class="input-group-addon">R$</span>
+						 	<input type="text" class="form-control value" value="" disabled  aria-label="">
+							<div class="input-group-addon">.00</div>
+						</div>
+							<button type="button" class="btn btn-previous" onclick="montaPizzaController.selectIngredient(event)">Voltar</button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</main>
+
+<script src="javascript/plugins/jquery-3.2.1.min.js"></script>
+<script src="javascript/plugins/angular-1.6.4.min.js"></script>
+<script src="javascript/plugins/bootstrap.min.js"></script>
+<script src="javascript/app/base.js"></script>
+<script src="javascript/app/controllers/MontaPizzaController.js"></script>	
+<script src="javascript/app/models/PrecoModel.js"></script>	
+<script src="javascript/app/models/ReduceModel.js"></script>	
+<script>
+	let montaPizzaController = new MontaPizzaController();
+</script>
+
+</body>
+</html>
